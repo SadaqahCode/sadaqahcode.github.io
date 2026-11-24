@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Sadaqah Code — Building Islamic technology for the Ummah</title>
+    <title>Sadaqah Code — Code for the Ummah. Charity for eternity.</title>
     <meta
       name="description"
-      content="Sadaqah Code is an open-source, community-owned initiative building privacy-first Islamic technology: prayer reminders, Hijri calendars and focus modes. Free forever."
+      content="Sadaqah Code is an Islamic open-source initiative building free, accessible digital tools for Muslims, guided by Islamic values and respect for privacy."
     />
     <meta name="author" content="Sadaqah Code" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -45,11 +45,11 @@
     <meta property="og:url" content="https://sadaqahcode.com/" />
     <meta
       property="og:title"
-      content="Sadaqah Code — Building Islamic technology for the Ummah"
+      content="Sadaqah Code — Code for the Ummah. Charity for eternity."
     />
     <meta
       property="og:description"
-      content="Open source. Community owned. Ethically grounded. Privacy-first Islamic tools, free forever."
+      content="Building Islamic technology through open-source collaboration. Guided by the Quran, grounded in Islamic values, and designed to benefit the Ummah."
     />
     <meta
       property="og:image"
@@ -59,7 +59,7 @@
     <meta property="og:image:height" content="630" />
     <meta
       property="og:image:alt"
-      content="Sadaqah Code — Building Islamic technology for the Ummah"
+      content="Sadaqah Code — Code for the Ummah. Charity for eternity."
     />
 
     <!-- Twitter / X -->
@@ -67,18 +67,18 @@
     <meta name="twitter:site" content="@SadaqahCode" />
     <meta
       name="twitter:title"
-      content="Sadaqah Code — Building Islamic technology for the Ummah"
+      content="Sadaqah Code — Code for the Ummah. Charity for eternity."
     />
     <meta
       name="twitter:description"
-      content="Open source. Community owned. Ethically grounded. Privacy-first Islamic tools, free forever."
+      content="Building Islamic technology through open-source collaboration. Guided by the Quran, grounded in Islamic values, and designed to benefit the Ummah."
     />
     <meta
       name="twitter:image"
       content="https://sadaqahcode.com/data/media/og-image.png"
     />
 
-    <!-- Structured data (JSON-LD) -->
+    <!-- Structured data -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -95,19 +95,20 @@
               "height": 180
             },
             "image": "https://sadaqahcode.com/data/media/og-image.png",
-            "description": "An open-source, community-owned initiative building privacy-first Islamic technology infrastructure for the Ummah.",
+            "description": "An Islamic open-source initiative building free and accessible digital tools for Muslims through open collaboration.",
             "email": "hello@sadaqahcode.com",
-            "slogan": "Code as continuous charity.",
+            "slogan": "Code for the Ummah. Charity for eternity.",
             "sameAs": [
               "https://github.com/SadaqahCode",
               "https://twitter.com/SadaqahCode",
               "https://discord.gg/u5s8cJFVuA",
+              "https://medium.com/@sadaqahcode",
               "https://opencollective.com/sadaqahcode"
             ],
             "contactPoint": {
               "@type": "ContactPoint",
               "email": "hello@sadaqahcode.com",
-              "contactType": "customer support",
+              "contactType": "general inquiries",
               "availableLanguage": ["English"]
             }
           },
@@ -116,18 +117,23 @@
             "@id": "https://sadaqahcode.com/#website",
             "url": "https://sadaqahcode.com/",
             "name": "Sadaqah Code",
-            "description": "Building Islamic technology for the Ummah. Open source. Community owned. Ethically grounded.",
+            "description": "Code for the Ummah. Charity for eternity. Building Islamic technology through open-source collaboration.",
             "inLanguage": "en",
-            "license": "https://www.gnu.org/licenses/gpl-3.0.html",
-            "publisher": { "@id": "https://sadaqahcode.com/#organization" }
+            "publisher": {
+              "@id": "https://sadaqahcode.com/#organization"
+            }
           },
           {
             "@type": "WebPage",
             "@id": "https://sadaqahcode.com/#webpage",
             "url": "https://sadaqahcode.com/",
-            "name": "Sadaqah Code — Building Islamic technology for the Ummah",
-            "isPartOf": { "@id": "https://sadaqahcode.com/#website" },
-            "about": { "@id": "https://sadaqahcode.com/#organization" },
+            "name": "Sadaqah Code — Code for the Ummah. Charity for eternity.",
+            "isPartOf": {
+              "@id": "https://sadaqahcode.com/#website"
+            },
+            "about": {
+              "@id": "https://sadaqahcode.com/#organization"
+            },
             "primaryImageOfPage": {
               "@type": "ImageObject",
               "url": "https://sadaqahcode.com/data/media/og-image.png",
@@ -142,33 +148,71 @@
 
     <link rel="stylesheet" href="data/css/style.css" />
   </head>
+
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
     <header class="site-header">
       <div class="container nav">
-        <a class="brand" href="#top">Sadaqah<span>Code</span></a>
-        <nav aria-label="Main">
+        <a class="brand" href="#top" aria-label="Sadaqah Code home">
+          Sadaqah<span>Code</span>
+        </a>
+        <nav aria-label="Main navigation">
+          <a href="#core-value">Our values</a>
           <a href="#about">About</a>
           <a href="#principles">Principles</a>
-          <a href="#developers">Developers</a>
+          <a href="#contribute">Contribute</a>
           <a href="#support">Support</a>
         </nav>
       </div>
     </header>
 
-    <main id="top">
-      <section class="hero">
+    <main id="main">
+      <section class="hero" id="top">
         <div class="container">
           <p class="eyebrow">Bismillah</p>
-          <h1>Building Islamic technology<br />for the Ummah.</h1>
-          <p class="lead">Open source. Community owned. Ethically grounded.</p>
+          <h1>Code for the Ummah.<br />Charity for eternity.</h1>
+          <p class="lead">
+            Building free, accessible Islamic technology through open-source
+            collaboration.
+          </p>
+          <p class="note">Open source. Community-driven. Ethically grounded.</p>
           <div class="actions">
-            <a class="btn btn-primary" href="https://github.com/SadaqahCode"
-              >View on GitHub</a
-            >
-            <a class="btn btn-ghost" href="https://discord.gg/u5s8cJFVuA"
-              >Join Discord</a
-            >
+            <a class="btn btn-primary" href="https://github.com/SadaqahCode">
+              Explore our projects
+            </a>
+            <a class="btn btn-ghost" href="https://discord.gg/u5s8cJFVuA">
+              Join the community
+            </a>
           </div>
+        </div>
+      </section>
+
+      <section id="core-value" class="section alt">
+        <div class="container narrow center">
+          <p class="eyebrow">Our core value</p>
+          <h2>Our work begins with intention.</h2>
+          <div class="card accent">
+            <p class="arabic" lang="ar" dir="rtl">
+              قُلْ إِنَّ صَلَاتِي وَنُسُكِي وَمَحْيَايَ وَمَمَاتِي لِلَّهِ رَبِّ
+              الْعَالَمِينَ
+            </p>
+            <p class="quote">
+              “Say, ‘Indeed, my prayer, my rites of sacrifice, my living and my
+              dying are for Allah, Lord of the worlds.’”
+            </p>
+            <p class="muted">Surah Al-An'am (6:162)</p>
+          </div>
+          <p class="note">
+            This verse is the foundation of our work. We believe our time,
+            knowledge, skills, and efforts are part of our lives, and we strive
+            to dedicate them to Allah.
+          </p>
+          <p>
+            Through Sadaqah Code, we aim to make our work in technology a means
+            of benefit for the Ummah — building useful tools, sharing knowledge,
+            and contributing to lasting good.
+          </p>
         </div>
       </section>
 
@@ -177,27 +221,32 @@
           <div>
             <h2>What is Sadaqah Code?</h2>
             <p>
-              An open-source initiative building Islamic technology
-              infrastructure — prayer reminders, Islamic calendars, focus modes,
-              and more.
+              <strong>Sadaqah Code</strong> is an Islamic open-source initiative
+              dedicated to building high-quality, free, and accessible digital
+              tools for Muslims worldwide.
             </p>
             <p>
-              <strong>Core principle:</strong> technology should serve Islamic
-              values, not corporate profits.
+              We believe technology should serve people, not exploit them. Our
+              mission is to create software that brings real benefit to the
+              Muslim community while remaining transparent, accessible, and
+              grounded in Islamic values.
             </p>
           </div>
           <div class="card accent">
             <h3>Why “Sadaqah Code”?</h3>
             <p>
-              Sadaqah Jariyah is ongoing charity that keeps benefiting people
-              long after the act. Open source works the same way.
+              Sadaqah Jariyah is an ongoing charity that continues to benefit
+              others. We see open-source work as one possible means of
+              contributing to lasting benefit.
             </p>
             <ul class="checks">
-              <li>Write code once → it benefits Muslims forever</li>
-              <li>Share knowledge → others build upon it</li>
-              <li>Create tools → the community improves them</li>
+              <li>Build useful tools that people can continue to use.</li>
+              <li>
+                Share knowledge that others can learn from and build upon.
+              </li>
+              <li>Make software open to improvement and collaboration.</li>
             </ul>
-            <p class="quote">Code as continuous charity.</p>
+            <p class="quote">Code as a means of ongoing charity.</p>
           </div>
         </div>
       </section>
@@ -205,54 +254,64 @@
       <section id="principles" class="section alt">
         <div class="container">
           <h2>What we stand for</h2>
+          <p class="sub">
+            Our principles shape what we build, how we build it, and how we
+            treat the people who use it.
+          </p>
           <div class="grid">
             <article class="card">
               <span class="num">01</span>
-              <h3>Open Source Always</h3>
+              <h3>Open Source</h3>
               <p>
-                All code is public, auditable, and free. No proprietary lock-in.
+                We make our projects available for people to study, use, modify,
+                and contribute to under their respective open-source licenses.
               </p>
             </article>
             <article class="card">
               <span class="num">02</span>
-              <h3>Privacy First</h3>
+              <h3>Privacy &amp; Data Minimization</h3>
               <p>
-                No tracking or analytics. No data mining. Local storage by
-                default.
+                No advertising or sale of user data. We avoid unnecessary data
+                collection and use local storage or offline functionality where
+                practical.
               </p>
             </article>
             <article class="card">
               <span class="num">03</span>
               <h3>Islamic Values</h3>
               <p>
-                Accurate prayer times, a respected Hijri calendar, halal content
-                prioritized.
+                We aim to handle the Quran, Sunnah, and Islamic content with
+                care, accuracy, and respect.
               </p>
             </article>
             <article class="card">
               <span class="num">04</span>
-              <h3>Community Owned</h3>
+              <h3>Free &amp; Accessible</h3>
               <p>
-                Not controlled by one person or company. Contributions welcome,
-                governance transparent.
+                Our goal is to keep useful tools accessible without advertising
+                or unnecessary barriers.
               </p>
             </article>
             <article class="card">
               <span class="num">05</span>
-              <h3>Free Forever</h3>
-              <p>No ads. No premium tiers. No paywalls.</p>
+              <h3>Respectful Technology</h3>
+              <p>
+                We avoid manipulative design and unnecessary engagement loops.
+                Technology should respect people's time, attention, and dignity.
+              </p>
             </article>
             <article class="card">
               <span class="num">06</span>
-              <h3>No Exploitation</h3>
+              <h3>Community Contribution</h3>
               <p>
-                No addictive features. No dark patterns. Technology that
-                respects users.
+                We welcome shared knowledge, thoughtful feedback, and
+                contributions from people with different skills and backgrounds.
               </p>
             </article>
           </div>
           <p class="note">
-            And above all: <strong>long-term impact</strong> — built to last.
+            Above all, we value <strong>lasting benefit</strong> — work intended
+            to remain useful beyond its first release.
           </p>
         </div>
       </section>
@@ -262,31 +321,40 @@
           <div>
             <h2>Who we are</h2>
             <p>
-              Developed by the
-              <a href="https://flagodna.com">FlagoDNA Team</a> — developers who
-              have built Islamic apps since 2020.
+              Sadaqah Code was founded and is maintained by the
+              <a href="https://flagodna.com">FlagoDNA team</a>, which leads the
+              technical development and stewardship of the initiative.
             </p>
             <p>
-              Sadaqah Code represents the community ownership and ethical
-              framework behind the work.
+              Sadaqah Code provides the open-source identity, mission, and
+              principles that guide this work. The community is welcome to
+              contribute, collaborate, and benefit from the projects.
             </p>
           </div>
           <ol class="steps">
-            <li><strong>FlagoDNA</strong> builds and maintains the code.</li>
             <li>
-              <strong>Sadaqah Code</strong> defines the mission and principles.
+              <strong>FlagoDNA</strong> leads technical development and
+              maintenance.
             </li>
-            <li><strong>The community</strong> contributes and benefits.</li>
+            <li>
+              <strong>Sadaqah Code</strong> carries the mission and guiding
+              principles.
+            </li>
+            <li>
+              <strong>The community</strong> contributes, collaborates, and
+              benefits.
+            </li>
           </ol>
         </div>
       </section>
 
-      <section id="developers" class="section alt">
+      <section id="contribute" class="section alt">
         <div class="container">
-          <h2>For developers</h2>
+          <h2>Contribute to the work</h2>
           <p class="sub">
-            All libraries are free and open source. Use them in your Islamic
-            apps.
+            You do not need to be a developer to contribute. We welcome
+            developers, designers, translators, writers, testers, and anyone
+            willing to share their knowledge and skills.
           </p>
           <div class="grid three">
             <a
@@ -294,15 +362,15 @@
               href="https://github.com/SadaqahCode/sadaqahcode.github.io/blob/main/CONTRIBUTING.md"
             >
               <h3>Read the guide</h3>
-              <p>Start with CONTRIBUTING.md.</p>
+              <p>Learn how to contribute through our CONTRIBUTING.md guide.</p>
             </a>
             <a class="card link" href="https://github.com/SadaqahCode">
-              <h3>Pick an issue</h3>
-              <p>Browse open issues across repositories.</p>
+              <h3>Explore projects</h3>
+              <p>Browse repositories, open issues, and ongoing work.</p>
             </a>
             <a class="card link" href="https://discord.gg/u5s8cJFVuA">
-              <h3>Join Discord</h3>
-              <p>Talk with the community.</p>
+              <h3>Join the community</h3>
+              <p>Connect with people interested in building for the Ummah.</p>
             </a>
           </div>
         </div>
@@ -312,23 +380,56 @@
         <div class="container narrow center">
           <h2>Support the work</h2>
           <p>
-            Projects are free forever. Infrastructure — servers, testing,
-            domains — still costs money. Support if you can.
+            We aim to keep our projects freely accessible and free from
+            advertisements. Maintaining open-source software still requires
+            resources — including servers, domains, testing, and ongoing
+            development.
+          </p>
+          <p>
+            Contributions help sustain the infrastructure and the work behind
+            these projects.
           </p>
           <div class="actions center">
             <a
               class="btn btn-primary"
               href="https://opencollective.com/sadaqahcode"
-              >Open Collective</a
             >
+              Open Collective
+            </a>
             <a
               class="btn btn-ghost"
               href="https://github.com/sponsors/SadaqahCode"
-              >GitHub Sponsors</a
             >
+              GitHub Sponsors
+            </a>
           </div>
           <p class="muted">
-            Or contribute by sharing, reporting bugs, or making dua.
+            You can also contribute by sharing projects, reporting bugs,
+            contributing your skills, or making dua.
+          </p>
+        </div>
+      </section>
+
+      <section id="connect" class="section alt">
+        <div class="container narrow center">
+          <h2>Connect with us</h2>
+          <p>
+            Follow the work, ask a question, or get involved in the community.
+          </p>
+          <div class="actions center">
+            <a class="btn btn-primary" href="https://github.com/SadaqahCode">
+              GitHub
+            </a>
+            <a class="btn btn-ghost" href="https://discord.gg/u5s8cJFVuA">
+              Discord
+            </a>
+          </div>
+          <p class="muted">
+            <a href="mailto:hello@sadaqahcode.com">hello@sadaqahcode.com</a>
+            ·
+            <a href="https://twitter.com/SadaqahCode">Twitter / X</a>
+            ·
+            <a href="https://medium.com/@sadaqahcode">Medium</a>
           </p>
         </div>
       </section>
@@ -336,10 +437,12 @@
 
     <footer class="site-footer">
       <div class="container foot">
-        <p>© Sadaqah Code · GPL-3.0 — free to use, modify and distribute.</p>
+        <p>
+          © Sadaqah Code · Open-source initiative for the benefit of the Ummah.
+        </p>
         <p>
           <a href="https://sadaqahcode.com">sadaqahcode.com</a> ·
-          <a href="mailto:hello@sadaqahcode.com">hello@sadaqahcode.com</a> ·
+          <a href="mailto:sadaqahcode@proton.me">sadaqahcode@proton.me</a> ·
           <a href="https://twitter.com/SadaqahCode">@SadaqahCode</a>
         </p>
       </div>
