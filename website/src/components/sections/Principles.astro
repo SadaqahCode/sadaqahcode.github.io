@@ -1,0 +1,30 @@
+---
+import Section from "@/components/ui/Section.astro";
+import PrincipleCard from "@/components/ui/PrincipleCard.astro";
+
+const principles = [
+  { num: "01", title: "Open Source", text: "We make our projects available for people to study, use, modify, and contribute to under their respective open-source licenses." },
+  { num: "02", title: "Privacy & Data Minimization", text: "No advertising or sale of user data. We avoid unnecessary data collection and use local storage or offline functionality where practical." },
+  { num: "03", title: "Islamic Values", text: "We aim to handle the Quran, Sunnah, and Islamic content with care, accuracy, and respect." },
+  { num: "04", title: "Free & Accessible", text: "Our goal is to keep useful tools accessible without advertising or unnecessary barriers." },
+  { num: "05", title: "Respectful Technology", text: "We avoid manipulative design and unnecessary engagement loops. Technology should respect people's time, attention, and dignity." },
+  { num: "06", title: "Community Contribution", text: "We welcome shared knowledge, thoughtful feedback, and contributions from people with different skills and backgrounds." },
+];
+---
+
+<Section id="principles" alt>
+  <h2>What we stand for</h2>
+  <p class="sub">
+    Our principles shape what we build, how we build it, and how we
+    treat the people who use it.
+  </p>
+  <div class="grid">
+    {principles.map(({ num, title, text }) => (
+      <PrincipleCard num={num} title={title}>{text}</PrincipleCard>
+    ))}
+  </div>
+  <p class="note">
+    Above all, we value <strong>lasting benefit</strong> — work intended
+    to remain useful beyond its first release.
+  </p>
+</Section>

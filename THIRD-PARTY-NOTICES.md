@@ -34,7 +34,7 @@ The original copyright notice and OFL license must accompany redistributed copie
 
 **License File**
 
-See `data/fonts/OFL.txt` for the complete SIL Open Font License 1.1.
+See `website/src/assets/fonts/OFL.txt` for the complete SIL Open Font License 1.1.
 
 ---
 

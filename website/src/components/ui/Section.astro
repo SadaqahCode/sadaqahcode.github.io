@@ -1,0 +1,16 @@
+---
+interface Props {
+  id: string;
+  alt?: boolean;
+  /** class untuk div pembungkus, selain "container" */
+  containerClass?: string;
+}
+
+const { id, alt = false, containerClass } = Astro.props;
+---
+
+<section id={id} class:list={["section", { alt }]}>
+  <div class:list={["container", containerClass]}>
+    <slot />
+  </div>
+</section>

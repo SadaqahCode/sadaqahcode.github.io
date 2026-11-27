@@ -1,0 +1,36 @@
+---
+import "@/styles/home.css";
+import SiteHeader from "@/components/layout/SiteHeader.astro";
+import SiteFooter from "@/components/layout/SiteFooter.astro";
+import Seo from "@/components/layout/Seo.astro";
+
+type SeoProps = Parameters<typeof Seo>[0];
+
+interface Props extends Partial<SeoProps> {
+  navLinks?: { href: string; label: string }[];
+}
+
+const {
+  title = "Sadaqah Code — Code for the Ummah. Charity for eternity.",
+  description = "Sadaqah Code is an Islamic open-source initiative building free, accessible digital tools for Muslims, guided by Islamic values and respect for privacy.",
+  navLinks,
+  ...seo
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <Seo title={title} description={description} {...seo} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <SiteHeader links={navLinks} />
+    <main id="main">
+      <slot />
+    </main>
+    <SiteFooter />
+  </body>
+</html>

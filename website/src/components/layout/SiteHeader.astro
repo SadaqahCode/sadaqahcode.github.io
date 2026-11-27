@@ -1,0 +1,90 @@
+---
+interface Props {
+  links?: { href: string; label: string }[];
+}
+
+const {
+  links = [
+    { href: "/#core-value", label: "Our values" },
+    { href: "/#about", label: "About" },
+    { href: "/#principles", label: "Principles" },
+    { href: "/#contribute", label: "Contribute" },
+    { href: "/#support", label: "Support" },
+  ],
+} = Astro.props;
+---
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="/#top" aria-label="Sadaqah Code home">
+      Sadaqah<span>Code</span>
+    </a>
+
+    <nav class="nav-desktop" aria-label="Main navigation">
+      {links.map(({ href, label }) => <a href={href}>{label}</a>)}
+    </nav>
+
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="mobile-drawer"
+    >
+      <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Di luar <header> karena backdrop-filter bikin fixed jadi relatif ke header -->
+<div class="drawer-overlay" data-drawer-overlay></div>
+<aside id="mobile-drawer" class="drawer" aria-label="Menu" inert>
+  <div class="drawer-head">
+    <span class="brand">Sadaqah<span>Code</span></span>
+    <button class="drawer-close" type="button" aria-label="Close menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <path d="M6 6l12 12M18 6L6 18" />
+      </svg>
+    </button>
+  </div>
+  <nav aria-label="Mobile navigation">
+    {links.map(({ href, label }) => <a href={href}>{label}</a>)}
+  </nav>
+</aside>
+
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>(".nav-toggle")!;
+  const drawer = document.getElementById("mobile-drawer")!;
+  const overlay = document.querySelector<HTMLElement>("[data-drawer-overlay]")!;
+  const closeBtn = drawer.querySelector<HTMLButtonElement>(".drawer-close")!;
+
+  function setOpen(open: boolean) {
+    drawer.classList.toggle("open", open);
+    overlay.classList.toggle("open", open);
+    drawer.inert = !open;
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    document.documentElement.classList.toggle("no-scroll", open);
+    (open ? closeBtn : toggle).focus();
+  }
+
+  toggle.addEventListener("click", () => setOpen(true));
+  closeBtn.addEventListener("click", () => setOpen(false));
+  overlay.addEventListener("click", () => setOpen(false));
+  drawer.querySelectorAll("a").forEach((a) =>
+    a.addEventListener("click", () => { 
+      drawer.classList.remove("open");
+      overlay.classList.remove("open");
+      drawer.inert = true;
+      toggle.setAttribute("aria-expanded", "false");
+      document.documentElement.classList.remove("no-scroll");
+    })
+  );
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && drawer.classList.contains("open")) setOpen(false);
+  }); 
+  window.matchMedia("(min-width: 641px)").addEventListener("change", (e) => {
+    if (e.matches && drawer.classList.contains("open")) setOpen(false);
+  });
+</script>

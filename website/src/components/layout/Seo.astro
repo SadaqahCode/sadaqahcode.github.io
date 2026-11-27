@@ -1,0 +1,120 @@
+---
+import landing_schema from "@/assets/data/landing/schema.json";
+import muslim_launcher_schema from "@/assets/data/muslim-launcher/schema.json";
+
+const schemas = {
+  landing: landing_schema,
+  "muslim-launcher": muslim_launcher_schema,
+};
+
+type SchemaKey = keyof typeof schemas;
+
+interface Props {
+  title: string;
+  description: string;
+  noindex?: boolean;
+
+  // Social text (OG & Twitter)
+  socialTitle?: string;
+  socialDescription?: string;
+
+  // Social media
+  ogImage?: string; // path ("/data/media/x.png") or absolute URL
+  ogImageAlt?: string;
+  ogImageWidth?: number;
+  ogImageHeight?: number;
+
+  // JSON-LD: single key, multiple keys, or false to disable.
+  // If omitted: defaults to "landing" on "/", otherwise none.
+  schema?: SchemaKey | SchemaKey[] | false; 
+  iconsPath?: string;
+}
+
+const site = Astro.site ?? "https://sadaqahcode.com";
+
+const {
+  title,
+  description,
+  noindex = false,
+  socialTitle = title,
+  socialDescription = "Building Islamic technology through open-source collaboration. Guided by the Quran, grounded in Islamic values, and designed to benefit the Ummah.",
+  ogImage = "/data/media/og-image.png",
+  ogImageAlt = "Sadaqah Code — Code for the Ummah. Charity for eternity.",
+  ogImageWidth = 1200,
+  ogImageHeight = 630,
+  schema,
+  iconsPath = "/data/media",
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, site);
+const ogImageUrl = new URL(ogImage, site).href;
+
+const schemaKeys: SchemaKey[] =
+  schema === false
+    ? []
+    : schema === undefined
+      ? Astro.url.pathname === "/"
+        ? ["landing"]
+        : []
+      : Array.isArray(schema)
+        ? schema
+        : [schema];
+ 
+const jsonLd = schemaKeys.map((key) =>
+  JSON.stringify(schemas[key]).replace(/</g, "\\u003c")
+);
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta name="generator" content={Astro.generator} />
+<meta name="author" content="Sadaqah Code" />
+<meta
+  name="robots"
+  content={noindex ? "noindex, follow" : "index, follow, max-image-preview:large"}
+/>
+<link rel="canonical" href={canonical} />
+<link
+  rel="alternate"
+  type="text/markdown"
+  href="/llms.txt"
+  title="Sadaqah Code information for AI systems"
+/>
+<link rel="sitemap" href="/sitemap-index.xml" />
+<link rel="ard" href="/.well-known/ard.json" type="application/json" />
+<meta name="color-scheme" content="light dark" />
+<meta name="theme-color" content="#f7f4ec" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#0c1311" media="(prefers-color-scheme: dark)" />
+
+<!-- Icons -->
+<link rel="icon" type="image/png" href={`${iconsPath}/favicon-96x96.png`} sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href={`${iconsPath}/favicon.svg`} />
+<link rel="shortcut icon" href={`${iconsPath}/favicon.ico`} />
+<link rel="apple-touch-icon" sizes="180x180" href={`${iconsPath}/apple-touch-icon.png`} />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Sadaqah Code" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:url" content={canonical} />
+<meta property="og:title" content={socialTitle} />
+<meta property="og:description" content={socialDescription} />
+<meta property="og:image" content={ogImageUrl} />
+<meta property="og:image:width" content={String(ogImageWidth)} />
+<meta property="og:image:height" content={String(ogImageHeight)} />
+<meta property="og:image:alt" content={ogImageAlt} />
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@SadaqahCode" />
+<meta name="twitter:title" content={socialTitle} />
+<meta name="twitter:description" content={socialDescription} />
+<meta name="twitter:image" content={ogImageUrl} />
+<meta name="twitter:image:alt" content={ogImageAlt} />
+
+<!-- Structured data -->
+{
+  jsonLd.map((json) => (
+    <script is:inline type="application/ld+json" set:html={json} />
+  ))
+}

@@ -1,0 +1,24 @@
+---
+import Section from "@/components/ui/Section.astro";
+import LinkCard from "@/components/ui/LinkCard.astro";
+
+const cards = [
+  { href: "https://github.com/SadaqahCode/sadaqahcode.github.io/blob/main/CONTRIBUTING.md", title: "Read the guide", text: "Learn how to contribute through our CONTRIBUTING.md guide." },
+  { href: "https://github.com/SadaqahCode", title: "Explore projects", text: "Browse repositories, open issues, and ongoing work." },
+  { href: "https://discord.gg/u5s8cJFVuA", title: "Join the community", text: "Connect with people interested in building for the Ummah." },
+];
+---
+
+<Section id="contribute" alt>
+  <h2>Contribute to the work</h2>
+  <p class="sub">
+    You do not need to be a developer to contribute. We welcome
+    developers, designers, translators, writers, testers, and anyone
+    willing to share their knowledge and skills.
+  </p>
+  <div class="grid three">
+    {cards.map(({ href, title, text }) => (
+      <LinkCard href={href} title={title} blank>{text}</LinkCard>
+    ))}
+  </div>
+</Section>

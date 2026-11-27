@@ -1,0 +1,213 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Section from "@/components/ui/Section.astro";
+import ButtonLink from "@/components/ui/ButtonLink.astro";
+import LinkCard from "@/components/ui/LinkCard.astro";
+
+const repo = "https://github.com/SadaqahCode/muslim-launcher";
+const description =
+  "Muslim Launcher is an Android launcher designed around prayer, intention, and muhasabah. No ads, no analytics, no tracking.";
+
+const navLinks = [
+  { href: "#philosophy", label: "Philosophy" },
+  { href: "#features", label: "Features" },
+  { href: "#categories", label: "Categories" },
+  { href: "#privacy", label: "Privacy" },
+  { href: "#contribute", label: "Contribute" },
+];
+
+const features = [
+  {
+    title: "Home",
+    items: [
+      "Prayer times and Hijri date as central elements.",
+      "Prayer-focused home screen.",
+      "Pinned applications and customizable dock.",
+      "Custom wallpaper.",
+    ],
+  },
+  {
+    title: "App Drawer",
+    items: [
+      "Application search.",
+      "Category-based browsing.",
+      "Personal and Work tabs.",
+    ],
+  },
+  {
+    title: "Widgets",
+    items: ["Add and remove widgets.", "Resize widgets.", "Reorder widgets."],
+  },
+];
+
+const categories = [
+  { name: "Deen", text: "Applications supporting religious practice and learning." },
+  { name: "Dunya — necessary", text: "Applications needed for everyday responsibilities." },
+  { name: "Dunya — optional", text: "Applications used for optional activities and entertainment." },
+  { name: "Fitnah risk", text: "Applications that may expose users to harmful or distracting content." },
+];
+
+const isNot = [
+  {
+    title: "An Islamic-themed launcher",
+    text: "Its foundation is a philosophy of intentional technology use, not visual decoration.",
+  },
+  {
+    title: "A screen-time tracker",
+    text: "It focuses on awareness and intention rather than usage statistics.",
+  },
+  { title: "A productivity tool", text: "Productivity is not its primary objective." },
+  { title: "A parental control app", text: "It is designed around personal responsibility." },
+];
+
+const docs = [
+  {
+    title: "Roadmap",
+    href: `${repo}/blob/main/ROADMAP.md`,
+    text: "See where the project is heading.",
+  },
+  {
+    title: "Developer Contract",
+    href: `${repo}/blob/main/data/docs/en/DEVELOPER_CONTRACT.md`,
+    text: "The project's philosophy, values, and non-negotiable principles.",
+  },
+  {
+    title: "Contributing",
+    href: `${repo}/blob/main/CONTRIBUTING.md`,
+    text: "Contribution procedures and submission requirements.",
+  },
+];
+---
+
+<Layout
+  title="Muslim Launcher — Built to keep you aware"
+  description={description}
+  navLinks={navLinks} 
+  schema="muslim-launcher"
+  ogImage="/data/media/muslim-launcher/screenshots.jpg"
+  ogImageAlt="Muslim Launcher screenshot"
+  socialTitle="Muslim Launcher"
+  socialDescription={description}
+>
+  <section class="hero" id="top">
+    <div class="container">
+      <p class="eyebrow">Muslim Launcher</p>
+      <h1>Built to keep<br />you aware.</h1>
+      <p class="lead">
+        An Android launcher designed around prayer, intention, and
+        <em>{" "}muhasabah</em>.
+      </p>
+      <p class="note">
+        No ads. No analytics. No tracking. Android 7.0+ · GPL-3.0
+      </p>
+      <div class="actions">
+        <ButtonLink href={`${repo}/releases/latest`} blank>Download latest release</ButtonLink>
+        <ButtonLink href={repo} variant="ghost" blank>View source</ButtonLink>
+      </div>
+    </div>
+  </section>
+
+  <Section id="preview" containerClass="center">
+    <img
+      class="screenshot"
+      src="./data/media/muslim-launcher/screenshots.jpg"
+      alt="Muslim Launcher screenshots"
+      loading="lazy"
+    />
+  </Section>
+
+  <Section id="philosophy" alt containerClass="narrow center">
+    <p class="eyebrow">Philosophy</p>
+    <h2>The phone is an <em>amanah</em>.</h2>
+    <p>
+      Smartphones have become part of everyday life. We use them for
+      communication, work, learning, entertainment, and countless other
+      activities. But convenience does not always mean benefit.
+    </p>
+    <p>
+      Muslim Launcher encourages you to be more conscious of what you access,
+      why you access it, and how you spend your attention.
+    </p>
+    <p class="quote">
+      The goal is not to eliminate technology, but to put it in its proper place.
+    </p>
+  </Section>
+
+  <Section id="features">
+    <h2>Features</h2>
+    <div class="grid three">
+      {features.map(({ title, items }) => (
+        <article class="card">
+          <h3>{title}</h3>
+          <ul class="checks">
+            {items.map((item) => <li>{item}</li>)}
+          </ul>
+        </article>
+      ))}
+    </div>
+  </Section>
+
+  <Section id="categories" alt>
+    <h2>Organize with awareness</h2>
+    <p class="sub">
+      Applications are categorized according to their purpose and potential
+      impact.
+    </p>
+    <div class="grid three">
+      {categories.map(({ name, text }) => (
+        <article class="card">
+          <h3>{name}</h3>
+          <p>{text}</p>
+        </article>
+      ))}
+    </div>
+    <p class="note">
+      A framework for personal awareness and reflection, not automatic judgments
+      about users.
+    </p>
+  </Section>
+
+  <Section id="not">
+    <h2>What Muslim Launcher is not</h2>
+    <div class="grid">
+      {isNot.map(({ title, text }) => (
+        <article class="card">
+          <h3>Not {title.charAt(0).toLowerCase() + title.slice(1)}</h3>
+          <p>{text}</p>
+        </article>
+      ))}
+    </div>
+  </Section>
+
+  <Section id="privacy" alt containerClass="narrow center">
+    <h2>Privacy</h2>
+    <p>
+      Muslim Launcher is designed to operate without unnecessary data
+      collection: no advertisements, no analytics, no tracking, with
+      offline-first functionality.
+    </p>
+    <p class="quote">
+      Your smartphone usage should not become another source of data extraction.
+    </p>
+  </Section>
+
+  <Section id="contribute">
+    <h2>Contribute</h2>
+    <p class="sub">
+      Contributions are welcome, provided they align with the project's
+      philosophy, principles, and technical direction. Please read the Developer
+      Contract and
+      <a href={`${repo}/blob/main/data/docs/en/CONTRIBUTOR_GUIDELINES.md`}>Contributor Guidelines</a>
+      first.
+    </p>
+    <div class="grid three">
+      {docs.map(({ title, href, text }) => (
+        <LinkCard href={href} title={title} blank>{text}</LinkCard>
+      ))}
+    </div>
+    <p class="note">
+      Found a bug or have an idea?  
+      <a href={`${repo}/issues`}>{" "}Open a GitHub issue</a>.
+    </p>
+  </Section>
+</Layout> 

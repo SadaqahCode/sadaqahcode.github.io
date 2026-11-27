@@ -1,0 +1,66 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://sadaqahcode.com/#organization",
+      "name": "Sadaqah Code",
+      "url": "https://sadaqahcode.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://sadaqahcode.com/data/media/apple-touch-icon.png",
+        "width": 180,
+        "height": 180
+      },
+      "image": "https://sadaqahcode.com/data/media/og-image.png",
+      "description": "An Islamic open-source initiative building free and accessible digital tools for Muslims through open collaboration.",
+      "email": "sadaqahcode@proton.me",
+      "slogan": "Code for the Ummah. Charity for eternity.",
+      "sameAs": [
+        "https://github.com/SadaqahCode",
+        "https://twitter.com/SadaqahCode",
+        "https://discord.gg/u5s8cJFVuA",
+        "https://medium.com/@sadaqahcode",
+        "https://opencollective.com/sadaqahcode"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "sadaqahcode@proton.me",
+        "contactType": "general inquiries",
+        "availableLanguage": [
+          "English"
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://sadaqahcode.com/#website",
+      "url": "https://sadaqahcode.com/",
+      "name": "Sadaqah Code",
+      "description": "Code for the Ummah. Charity for eternity. Building Islamic technology through open-source collaboration.",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://sadaqahcode.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://sadaqahcode.com/#webpage",
+      "url": "https://sadaqahcode.com/",
+      "name": "Sadaqah Code — Code for the Ummah. Charity for eternity.",
+      "isPartOf": {
+        "@id": "https://sadaqahcode.com/#website"
+      },
+      "about": {
+        "@id": "https://sadaqahcode.com/#organization"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://sadaqahcode.com/data/media/og-image.png",
+        "width": 1200,
+        "height": 630
+      },
+      "inLanguage": "en"
+    }
+  ]
+}
