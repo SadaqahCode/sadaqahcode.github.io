@@ -1,0 +1,35 @@
+# Sadaqah Code
+
+Sadaqah Code is an Islamic open-source initiative building free, accessible digital tools for Muslims through open-source collaboration. Its work is guided by Islamic values, privacy, respect, and lasting benefit.
+
+## About
+
+- Website: https://sadaqahcode.com/
+- Maintained by FlagoDNA: https://flagodna.com/
+- GitHub organization: https://github.com/SadaqahCode
+- Community: https://discord.gg/u5s8cJFVuA
+- Contact: mailto:sadaqahcode@proton.me
+
+## Principles
+
+- Open-source software that people can study, use, modify, and contribute to under each project's license.
+- Privacy and data minimization; no advertising or sale of user data.
+- Care and respect in handling Quran, Sunnah, and Islamic content.
+- Free and accessible tools without unnecessary barriers.
+- Technology that respects people's time, attention, and dignity.
+- Community knowledge, feedback, and collaboration.
+
+## Contributing
+
+- Contribution guide: https://github.com/SadaqahCode/sadaqahcode.github.io/blob/main/CONTRIBUTING.md
+- Projects and repositories: https://github.com/SadaqahCode
+
+## Support
+
+- Open Collective: https://opencollective.com/sadaqahcode
+- GitHub Sponsors: https://github.com/sponsors/SadaqahCode
+
+## Social
+
+- Twitter / X: https://twitter.com/SadaqahCode
+- Medium: https://medium.com/@sadaqahcode
